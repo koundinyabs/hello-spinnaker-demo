@@ -1,0 +1,26 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: hello-spinnaker-demo
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: hello-spinnaker-demo
+      deployment: hello-world
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: hello-spinnaker-demo
+        deployment: hello-world
+    spec:
+      containers:
+      - name: hello-world
+        image: koundinya/hello-world:v1
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+        ports:
+        - containerPort: 8080

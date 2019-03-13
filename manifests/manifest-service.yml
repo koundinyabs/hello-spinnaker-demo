@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: hello-spinnaker-demo
+    deployment: hello-spinnaker-demo
+  name: hello-spinnaker-demo-service
+  namespace: dev  
+spec:
+  ports:
+  - port: 8080
+    name: hello-spinnaker-demo
+  type: LoadBalancer
+  selector:
+    app: hello-spinnaker-demo
