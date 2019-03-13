@@ -5,7 +5,7 @@ metadata:
     app: hello-spinnaker-demo
     deployment: hello-spinnaker-demo
   name: hello-spinnaker-demo-service
-  namespace: dev  
+  namespace: default  
 spec:
   ports:
   - port: 8080

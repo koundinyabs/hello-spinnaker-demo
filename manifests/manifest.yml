@@ -2,7 +2,7 @@ apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: hello-spinnaker-demo
-  namespace: dev
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -24,20 +24,3 @@ spec:
             memory: 200Mi
         ports:
         - containerPort: 8080
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: hello-spinnaker-demo
-    deployment: hello-spinnaker-demo
-  name: hello-spinnaker-demo-service
-  namespace: dev
-spec:
-  ports:
-  - port: 8080
-    name: hello-spinnaker-demo
-  type: LoadBalancer
-  selector:
-    app: hello-spinnaker-demo
