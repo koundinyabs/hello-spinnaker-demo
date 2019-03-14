@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: koundinya/hello-world:latest
+        image: koundinya/hello-world:1.3.3
         resources:
           requests:
             cpu: 200m
